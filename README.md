@@ -116,7 +116,7 @@ https://github.com/vercel/next.js/tree/canary/examples/with-react-native-web
 https://nextjs.org/learn/dashboard-app
 https://nextjs.org/learn/react-foundations
 https://necolas.github.io/react-native-web/
-
+https://nextjs.org/learn-pages-router/basics/create-nextjs-app
 
 
 
