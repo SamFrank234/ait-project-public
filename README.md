@@ -117,6 +117,8 @@ https://nextjs.org/learn/dashboard-app
 https://nextjs.org/learn/react-foundations
 https://necolas.github.io/react-native-web/
 https://nextjs.org/learn-pages-router/basics/create-nextjs-app
-
-
-
+https://reactnative.dev/docs/getting-started
+https://www.dripsy.xyz/usage/overview
+https://github.com/Zabatly/website
+https://github.com/vercel/next.js/tree/canary/examples/with-mongodb
+https://medium.com/courtly-intrepid/environmental-variables-in-next-js-with-dotenv-599c5bbfdf74
