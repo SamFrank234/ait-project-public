@@ -95,12 +95,16 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 (__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed)
 
-* (5 points) React Native with Web
+* (5 points) NextJS
 	* I want to be able to easily port this app t mobile, where I think it will be better for users
-	* So, I am using React Native with web
-	* I anticipate this being a tough framework to learn
+	* Eventually, I will try to use NextJS with React Native screens, but I quickly found this was too much new technology
+    to learn in a limited time, so I am starting by focusing on NextJS (and React and TypeScript) to get a feel for the
+    syntax, navigation, etc.
 * (4 points) Deploying on Vercel
 	* I hope this app will actually get used, so I will deploy it on Vercel in anticipation of a finished version
+* (3 points) tRPC
+  * I want to learn how I can use tRPC for my API
+  * The creator of Solito recommended this to me as a way to connect with a database for both web and mobiles
 * (4 points) Integrating payment
 	* This is probably a stretch, but if I can integrate a payment API such as Stripe before the deadline I will
 
