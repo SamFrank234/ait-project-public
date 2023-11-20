@@ -122,3 +122,4 @@ https://www.dripsy.xyz/usage/overview
 https://github.com/Zabatly/website
 https://github.com/vercel/next.js/tree/canary/examples/with-mongodb
 https://medium.com/courtly-intrepid/environmental-variables-in-next-js-with-dotenv-599c5bbfdf74
+https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type
