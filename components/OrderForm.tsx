@@ -8,7 +8,7 @@ import BONMiForm from './BONMiForm'
 interface FormData {
   buyer: number
   location: string
-  items: Record<string, string>[]
+  items: String []
   createdAt: string
   status: string
 }
@@ -41,9 +41,16 @@ const Form = ({ formId, orderForm }: Props) => {
   })*/
 
   /* The POST method adds a new entry in the mongodb database. */
-  const postData = async (form: FormData) => {
+  const postData = async (formData: Array<string>) => {
+    const items = formData.join(", ")
 
-    
+    const body = {
+      buyer: 123,
+      location: location,
+      items: items,
+      status: "unfulfilled" 
+    }
+
     try {
       const res = await fetch('/api/orders', {
         method: 'POST',
@@ -51,7 +58,7 @@ const Form = ({ formId, orderForm }: Props) => {
           Accept: contentType,
           'Content-Type': contentType,
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify(body),
       })
 
       // Throw error with status code in case Fetch API req failed
@@ -61,6 +68,7 @@ const Form = ({ formId, orderForm }: Props) => {
 
       router.push('/')
     } catch (error) {
+      console.log('error:', error)
       setMessage('Failed to submit order')
     }
   }
