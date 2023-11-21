@@ -42,6 +42,8 @@ const Form = ({ formId, orderForm }: Props) => {
 
   /* The POST method adds a new entry in the mongodb database. */
   const postData = async (form: FormData) => {
+
+    
     try {
       const res = await fetch('/api/orders', {
         method: 'POST',
