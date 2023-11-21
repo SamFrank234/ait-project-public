@@ -17,4 +17,4 @@ const OrderSchema = new mongoose.Schema({
   status: {type: String, required: true}
 })
 
-export default mongoose.models.Order || mongoose.model<Orders>('User', OrderSchema)
+export default mongoose.models.Order || mongoose.model<Orders>('Order', OrderSchema)
