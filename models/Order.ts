@@ -4,8 +4,8 @@ import mongoose from 'mongoose'
 export interface Orders extends mongoose.Document{
     buyer: number
     location: string
-    items: Record<string, string>[], 
-    createdAt: string,
+    items: Record<string, string>[] 
+    createdAt: string
     status: string
 }
 
