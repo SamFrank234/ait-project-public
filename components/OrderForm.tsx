@@ -1,7 +1,6 @@
 // https://github.com/vercel/next.js/blob/canary/examples/with-mongodb-mongoose/components/Form.tsx
 
 import { useState } from 'react'
-import { useRouter } from 'next/router'
 import ClucksteinForm from './ClucksteinForm'
 import BONMiForm from './BONMiForm'
 
@@ -25,8 +24,7 @@ type Props = {
   orderForm?: FormData
 }
 
-const Form = ({ formId, orderForm }: Props) => {
-  const router = useRouter()
+const Form = ({ formId }: Props) => {
   const contentType = 'application/json'
   const [errors, setErrors] = useState({})
   const [message, setMessage] = useState('')
@@ -66,11 +64,11 @@ const Form = ({ formId, orderForm }: Props) => {
         throw new Error(res.status.toString())
       }
 
-      router.push('/')
     } catch (error) {
       console.log('error:', error)
       setMessage('Failed to submit order')
     }
+
   }
 
   const handleChange = (
@@ -106,7 +104,7 @@ const Form = ({ formId, orderForm }: Props) => {
   return (
     <>
 
-      <form>
+      <form id={formId}>
         <input 
           type="radio" 
           name="store" 
