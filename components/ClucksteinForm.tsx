@@ -52,9 +52,9 @@ const ClucksteinForm  = ({ formId, postData }: Props) => {
         <>
         <form id={formId} onSubmit={handleSubmit}>
             <fieldset>
-                <Checkbox name="classic" label="Classic Chicken Tenders" onChange={handleChange}/><br/>
-                <Checkbox name="spicy" label="Spicy Chicken Tenders" onChange={handleChange}/><br/>
-                <Checkbox name="vegan" label="Vegan Chicken Tenders" onChange={handleChange}/><br/>
+                <Checkbox name="Classic Chicken Tenders" label="Classic Chicken Tenders" onChange={handleChange}/><br/>
+                <Checkbox name="Spicy Chicken Tenders" label="Spicy Chicken Tenders" onChange={handleChange}/><br/>
+                <Checkbox name="Vegan Chicken Tenders" label="Vegan Chicken Tenders" onChange={handleChange}/><br/>
             </fieldset>
             <button type="submit" className="btn">
             Submit

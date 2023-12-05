@@ -39,7 +39,7 @@ const SellersForm  = ({ orders }: Props) => {
         <Checkbox
             key={order._id}
             name={`order_${order._id}`}
-            label={order.items.join(', ')+`(${order.items.length} Meal Swipes)`}
+            label={order.location + ': '+order.items.join(', ')+`(${order.items.length} Meal Swipes)`}
             onChange={ handleChange}
         /> <br></br>
         </>
