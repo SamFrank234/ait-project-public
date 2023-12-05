@@ -1,4 +1,4 @@
-# NYU Eatz 
+# [NYU Eatz] (https://ait-project-public.vercel.app/) 
 
 ## Overview
 
