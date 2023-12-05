@@ -14,7 +14,7 @@ function UserPage ({user, orders} : Props) {
     const orderRows = orders.map( order => {
         const date = new Date(order.createdAt)
         return( 
-        <tr>
+        <tr key={order._id}>
             <td>{date.toLocaleDateString() + ', ' + date.toLocaleTimeString()}</td>
             <td>{order.location}</td>
             <td>{order.items.join(', ')}</td>
