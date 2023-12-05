@@ -1,6 +1,7 @@
 // inspired by https://github.com/vercel/next.js/blob/canary/examples/with-mongodb-mongoose/pages/%5Bid%5D/index.tsx
 
 
+import SellersForm from '@/components/SellersForm'
 import dbConnect from '../../lib/dbConnect'
 import Order, { Orders } from '../../models/Order'
 import Checkbox from '@/components/Checkbox'
@@ -14,22 +15,11 @@ type Props = {
 /* Allows you to view pet card info and delete pet card*/
 const SellPage = ({ orders }: Props) => {
   
-    const orderElems = orders.map( order => {
-        return( 
-        <>
-        <Checkbox
-            name={`order_${order.id}`}
-            label={order.items.join(', ')+`(${order.items.length} Meal Swipes)`}
-            onChange={ () => {return}}
-        /> <br></br>
-        </>
-        )
-    })
-
+    
   return (
     <>
       <h1>Sell Meal Swipes Here</h1>
-      {orderElems}
+      <SellersForm orders={orders}/>
     </>
   )
   
@@ -38,7 +28,7 @@ const SellPage = ({ orders }: Props) => {
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
     await dbConnect()
   
-    const result = await Order.find({fulfilled: false})
+    const result = await Order.find({status: "unfulfilled"})
   
     const orders = result.map((doc) => {
       const order = JSON.parse(JSON.stringify(doc))
