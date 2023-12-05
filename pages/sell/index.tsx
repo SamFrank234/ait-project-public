@@ -38,7 +38,7 @@ const SellPage = ({ orders }: Props) => {
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
     await dbConnect()
   
-    const result = await Order.find({})
+    const result = await Order.find({fulfilled: false})
   
     const orders = result.map((doc) => {
       const order = JSON.parse(JSON.stringify(doc))
