@@ -2,6 +2,7 @@ import { useSession } from "next-auth/react"
 import Link from "next/link"
 import Image from "next/image"
 import userIcon from '../public/user.png'
+import { signIn, signOut} from 'next-auth/react'
 
 const Navbar = () => {
 
@@ -11,9 +12,9 @@ const Navbar = () => {
     <>
         <Link href="/" className="nav-title">NYU Eatz</Link>
         {session && session.user ? 
-        <Link href="api/auth/signout" className="navbar">Sign Out</Link> :
+        <button onClick={() => signOut({callbackUrl: '/'})} className="navbar">Sign Out</button> :
         <>
-        <Link href="api/auth/signin" className="navbar">Log In</Link>
+        <button onClick={() => signIn(undefined, {callbackUrl: '/'})} className="navbar">Log In</button>
         <Link href="/signup" className="navbar">Sign Up</Link>
         </>
         }
