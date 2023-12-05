@@ -10,10 +10,9 @@ NYU Eatz helps clear the overegulated meal swipe market by allowing students to 
 ## Data Model
 
 
-The application will store Buyers, Sellers and Orders.
+The application will store Users and Orders.
 
-Buyers and Sellers will both log in (sellers will have to link their GrubHub acct).
-Buyers will place orders, which will then be assigned to available sellers.
+Users will log in and can place or fulfill.
 
 
 An Example Seller:
@@ -22,20 +21,7 @@ An Example Seller:
 {
   username: "mmmfood"
   email: abc123@nyu.edu
-  token: // GrubHub oauth token
-  status: offline //sellers will check in when they are available to fulfill orders
-  orders: //list of past and present orders
-}
-```
-
-An Example Buyer:
-
-```javascript
-{
-  username: "mmmfood"
-  email: abc123@nyu.edu
-  password: //buyers can use password hash, but oauth recommended
-  token: // GrubHub oauth token
+  password: password
   status: offline //sellers will check in when they are available to fulfill orders
   orders: //list of past and present orders
 }
@@ -56,7 +42,7 @@ An Example Order:
 ```
 
 
-## [Link to Commented First Draft Schema](db.mjs) 
+## [Link to Commented First Draft Schema](/models) 
 
 
 ## Wireframes
@@ -76,7 +62,7 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the site
 3. as a buyer, I can place an order
-4. as a seller, I can accept an order and upload confirmation
+4. as a seller, I can fullfil an order
 
 
 ## Research Topics
@@ -97,14 +83,11 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 ## [Link to Initial Main Project File](pages/index.tsx)
 
 ## Annotations / References Used
-https://github.com/vercel/next.js/tree/canary/examples/with-react-native-web
-https://nextjs.org/learn/dashboard-app
-https://nextjs.org/learn/react-foundations
-https://necolas.github.io/react-native-web/
-https://nextjs.org/learn-pages-router/basics/create-nextjs-app
-https://reactnative.dev/docs/getting-started
-https://www.dripsy.xyz/usage/overview
-https://github.com/Zabatly/website
+https://next-auth.js.org/
+https://nextjs.org/docs
 https://github.com/vercel/next.js/tree/canary/examples/with-mongodb
-https://medium.com/courtly-intrepid/environmental-variables-in-next-js-with-dotenv-599c5bbfdf74
 https://www.youtube.com/watch?v=2kgqPvs0j_I&t=447s
+https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
+https://github.com/vercel/next.js/blob/canary/examples/with-mongodb-mongoose
+https://github.com/EBEREGIT/nextjs-nextauth-tut/blob/main/page_router_tutorial
+https://stackoverflow.com/questions/70409219/get-user-id-from-session-in-next-auth-client
