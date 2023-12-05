@@ -89,6 +89,9 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 	* For now, I will just learn React and NextJS routing patterns
 * (4 points) Deploying on Vercel
 	* I hope this app will actually get used, so I will deploy it on Vercel in anticipation of a finished version
+* (2 points) Next-Auth
+  * I will use next-auth to handle my authentication needs
+  * I think this is probably the simplest and easiest way to handle authenticaiton, sessions, and protected routes in NextJS
 
 
 ## [Link to Initial Main Project File](pages/index.tsx)
@@ -104,3 +107,4 @@ https://www.dripsy.xyz/usage/overview
 https://github.com/Zabatly/website
 https://github.com/vercel/next.js/tree/canary/examples/with-mongodb
 https://medium.com/courtly-intrepid/environmental-variables-in-next-js-with-dotenv-599c5bbfdf74
+https://www.youtube.com/watch?v=2kgqPvs0j_I&t=447s
