@@ -1,10 +1,38 @@
-table {
-  border-collapse: collapse;
+body {
+  background-color: blanchedalmond;
 }
 
-table a {
-    text-decoration: none;
-    font-size: 18px;
+.nav-title {
+  display: inline-block;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar {
+  font-size:40px;
+  background-color: blueviolet;
+  color: blanchedalmond;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.nav-user {
+  position: absolute;
+  right: 0px;
+}
+
+.home-panel {
+  display: inline-block;
+  width: 35%;
+  margin: 30px;
+}
+
+table {
+  border-collapse: collapse;
 }
 
 tr {

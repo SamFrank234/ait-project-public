@@ -19,6 +19,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <h1>
+        Welcome to NYU Eatz!
+      </h1>
+      <div className='home-panel'>
+        <p>If you want to sell your extra meal swipes, check out a list of <Link href="/sell">unfulfilled orders</Link></p>
+      </div>
+      <div className='home-panel'>
+      <p>If you want to buy discounted meals, check out our current <Link href="/buy">menu</Link></p>
+      </div>
+      
     </>
   )
 }

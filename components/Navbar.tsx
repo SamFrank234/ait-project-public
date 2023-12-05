@@ -9,18 +9,18 @@ const Navbar = () => {
 
     return (
     <>
-        <Link href="/" className="nav-auth">Home</Link>
+        <Link href="/" className="nav-title">NYU Eatz</Link>
         {session && session.user ? 
-        <Link href="api/auth/signout" className="nav-auth">Sign Out</Link> :
+        <Link href="api/auth/signout" className="navbar">Sign Out</Link> :
         <>
-        <Link href="api/auth/signin" className="nav-auth">Log In</Link>
-        <Link href="/signup" className="nav-auth">Sign Up</Link>
+        <Link href="api/auth/signin" className="navbar">Log In</Link>
+        <Link href="/signup" className="navbar">Sign Up</Link>
         </>
         }
-        <Link href="/buy" className="nav-page">Buy</Link>
-        <Link href="/sell" className="nav-page">Sell</Link>
+        <Link href="/buy" className="navbar">Buy</Link>
+        <Link href="/sell" className="navbar">Sell</Link>
         {(session && session.user) && 
-            <Link href={`/users/${session.user.id}`} className="nav-page">
+            <Link href={`/users/${session.user.id}`} className="navbar nav-user">
                 <Image src={userIcon} height={20} width={25} alt="user icon"/>
             </Link>
         }
