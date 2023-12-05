@@ -44,7 +44,7 @@ const ClucksteinForm  = ({ formId, postData }: Props) => {
             }
         }
 
-        postData(items);    
+        postData(items);
     }
 
 
