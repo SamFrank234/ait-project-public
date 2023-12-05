@@ -15,18 +15,18 @@ export default async function handler(
   switch (method) {
     case 'GET':
       try {
-        const pets = await Order.find({}) /* find all the data in our database */
-        res.status(200).json({ success: true, data: pets })
+        const orders = await Order.find({}) /* find all the data in our database */
+        res.status(200).json({ success: true, data: orders })
       } catch (error) {
         res.status(400).json({ success: false })
       }
       break
     case 'POST':
       try {
-        const pet = await Order.create(
+        const order = await Order.create(
           req.body
         ) /* create a new model in the database */
-        res.status(201).json({ success: true, data: pet })
+        res.status(201).json({ success: true, data: order })
       } catch (error) {
         res.status(400).json({ success: false })
       }
