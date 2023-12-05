@@ -1,4 +1,5 @@
-# [NYU Eatz] (https://ait-project-public.vercel.app/) 
+# NYU Eatz
+## [Deployed Site on Vercel](https://ait-project-public.vercel.app/) 
 
 ## Overview
 
