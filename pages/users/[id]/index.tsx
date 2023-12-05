@@ -27,7 +27,7 @@ function UserPage ({user, orders} : Props) {
 
     return ( 
     <>
-        <h1>{user.username}'s Orders:</h1>
+        <h1>{user.username}{`&apos`}s Orders:</h1>
         <table>
             <tr>
                 <th>Date</th>
