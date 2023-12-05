@@ -5,13 +5,19 @@ import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/models/User";
+import { SessionStrategy } from "next-auth";
 
 interface credentials {
     email: string
     password: string
 }
 
-const authOptions = {
+const strat :SessionStrategy = "jwt"
+
+export const authOptions = {
+    session:{
+      strategy: strat
+    },
     providers: [
         CredentialsProvider({
             name: 'credentials',
@@ -49,9 +55,6 @@ const authOptions = {
         })
     ],
     secret: process.env.NEXT_AUTH_SECRET,
-    pages: {
-        signIn: "/login"
-    }
 }
 
 export default NextAuth(authOptions)

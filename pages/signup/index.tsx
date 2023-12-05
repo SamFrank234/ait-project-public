@@ -26,7 +26,7 @@ const SignUp = () => {
         const data = await res.json()
         if(res.ok){
             
-            router.push('/')
+            router.push('/api/auth/signin')
         } else if (data.error) {
             setError(data.error.code === 11000 ? 'It appears you already have an account. Try logging in.' : 'Something went wrong on our end. Please try again later')
         }
