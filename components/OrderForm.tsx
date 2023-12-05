@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import { useSession } from 'next-auth/react'
 import ClucksteinForm from './ClucksteinForm'
 import BONMiForm from './BONMiForm'
 
@@ -38,14 +39,23 @@ const Form = ({ formId }: Props) => {
   const postData = async (formData: Array<string>) => {
     const items = formData
 
-    const body = {
-      buyer: 123,
-      location: location,
-      items: items,
-      status: "unfulfilled" 
-    }
+    const res = await fetch('/api/auth/session')
+    const session = await res.json()
+
+    
 
     try {
+
+      if(!session?.user.id){
+        throw new Error ('no session id')
+      }
+      const body = {
+        buyer: session.user.id,
+        location: location,
+        items: items,
+        status: "unfulfilled" 
+      }
+
       const res = await fetch('/api/orders', {
         method: 'POST',
         headers: {
