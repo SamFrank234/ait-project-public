@@ -25,22 +25,22 @@ export const authOptions = {
         CredentialsProvider({
             name: 'credentials',
             credentials: {
-                email: {
-                    label: 'Email',
-                    type: 'email',
-                    placeholder: 'hello@example.com'
+                username: {
+                    label: 'Username',
+                    type: 'username',
+                    placeholder: 'username'
                   },
                   password: { label: 'Password', type: 'password' }
             },
             async authorize(credentials) {
-                if (!credentials?.email || !credentials.password) {
+                if (!credentials?.username || !credentials.password) {
                     return null
                   }
-                  const { email, password } = credentials;
+                  const { username, password } = credentials;
         
                 try {
                   await dbConnect();
-                  const user = await User.findOne({ email });
+                  const user = await User.findOne({ username });
         
                   if (!user) {
                     return null;
