@@ -6,6 +6,9 @@ import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/models/User";
 import { SessionStrategy } from "next-auth";
+import type { Session, User as AuthUser } from "next-auth";
+import type { JWT } from "next-auth/jwt";
+import type { AdapterUser } from "next-auth/adapters";
 
 interface credentials {
     email: string
@@ -55,6 +58,18 @@ export const authOptions = {
         })
     ],
     secret: process.env.NEXT_AUTH_SECRET,
+    callbacks: {
+      jwt({ token, user } : {token: JWT, user: AdapterUser | AuthUser}) {
+        if (user) {
+          token.id = user?.id
+        }
+        return token
+      },
+      session({ session, token } : {session: Session, token: JWT}) {
+          session.user.id = token.id;
+          return session;
+        },
+    },
 }
 
 export default NextAuth(authOptions)

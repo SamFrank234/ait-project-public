@@ -20,7 +20,7 @@ const Navbar = () => {
         <Link href="/buy" className="nav-page">Buy</Link>
         <Link href="/sell" className="nav-page">Sell</Link>
         {(session && session.user) && 
-            <Link href={`/user/${session.user}`} className="nav-page">
+            <Link href={`/user/${session.user.id}`} className="nav-page">
                 <Image src={userIcon} height={20} width={25} alt="user icon"/>
             </Link>
         }

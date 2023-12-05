@@ -21,7 +21,6 @@ const SellersForm  = ({ orders }: Props) => {
         statusForm = {...statusForm, [key]: false}
         return statusForm
     }, {})
-    console.log('init form', initialForm)
     const [form, setForm] = useState(initialForm)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,6 +37,7 @@ const SellersForm  = ({ orders }: Props) => {
         return( 
         <>
         <Checkbox
+            key={order._id}
             name={`order_${order._id}`}
             label={order.items.join(', ')+`(${order.items.length} Meal Swipes)`}
             onChange={ handleChange}
@@ -46,7 +46,6 @@ const SellersForm  = ({ orders }: Props) => {
         )
     }) 
 
-    console.log(orderElems)
 
 
     const putData = async (formData: Array<string>) => {
@@ -54,7 +53,6 @@ const SellersForm  = ({ orders }: Props) => {
     
         items.filter(id => form[id]===true)
              .forEach(async item => {
-            console.log(item)
             const id = item.replace('order_', '')
             try {
                 const res = await fetch(`/api/orders/${id}`, {
