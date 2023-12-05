@@ -2,9 +2,9 @@ import { useState } from 'react'
 import Checkbox from './Checkbox'
 
 interface BONMiData {
-    redeye: boolean
-    bbq: boolean
-    kickshaw: boolean
+    "Red Eye Banh Mi Sandwich": boolean
+    "BBQ Belly Banh Mi Sandwich": boolean
+    "Kickshaw Salad": boolean
 }
 
 type Props = {
@@ -17,9 +17,9 @@ const BONMiForm  = ({ formId, postData }: Props) => {
     
 
     const [form, setForm] = useState({
-        redeye: false,
-        bbq: false,
-        kickshaw: false,
+        "Red Eye Banh Mi Sandwich": false,
+        "BBQ Belly Banh Mi Sandwich": false,
+        "Kickshaw Salad": false,
     })
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,9 +51,9 @@ const BONMiForm  = ({ formId, postData }: Props) => {
         <>
         <form id={formId} onSubmit={handleSubmit}>
             <fieldset>
-                <Checkbox name="redeye" label="Red Eye Banh Mi Sandwich" onChange={handleChange}/><br/>
-                <Checkbox name="bbq" label="BBQ Belly Banh Mi Sandwich" onChange={handleChange}/><br/>
-                <Checkbox name="kickshaw" label="Kickshaw Salad" onChange={handleChange}/><br/>
+                <Checkbox name="Red Eye Banh Mi Sandwich" label="Red Eye Banh Mi Sandwich" onChange={handleChange}/><br/>
+                <Checkbox name="BBQ Belly Banh Mi Sandwich" label="BBQ Belly Banh Mi Sandwich" onChange={handleChange}/><br/>
+                <Checkbox name="Kickshaw Salad" label="Kickshaw Salad" onChange={handleChange}/><br/>
             </fieldset>
             <button type="submit" className="btn">
             Submit

@@ -42,7 +42,7 @@ const Form = ({ formId, orderForm }: Props) => {
 
   /* The POST method adds a new entry in the mongodb database. */
   const postData = async (formData: Array<string>) => {
-    const items = formData.join(", ")
+    const items = formData
 
     const body = {
       buyer: 123,
