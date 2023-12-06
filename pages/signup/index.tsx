@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import {signIn} from 'next-auth/react'
 
 const SignUp = () => {
     const router = useRouter()
@@ -28,7 +29,7 @@ const SignUp = () => {
             
             router.push('/api/auth/signin')
         } else if (data.error) {
-            setError(data.error.code === 11000 ? 'It appears you already have an account. Try logging in.' : 'Something went wrong on our end. Please try again later')
+            setError(data.error.code === 11000 ? 'It appears an account already exists with that username or password. Try logging in.' : 'Something went wrong on our end. Please try again later')
         }
     }
 
@@ -62,7 +63,7 @@ const SignUp = () => {
             <div>
                 <input type="submit" value="Sign Up"/>
             </div>
-            <span>Already have an account? <Link href="/login">Log In</Link></span>
+            <span>Already have an account? <button onClick={() => signIn(undefined, {callbackUrl: '/'})} className="navbar">Log In</button></span>
         </form>
         {
             error && <h2>{error}</h2>
